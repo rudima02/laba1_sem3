@@ -1,55 +1,20 @@
 #include "FullBinaryTree.h"
-#include <iostream>
-void pushQueueFBT(NodeQueueFBT*& head, NodeQueueFBT*& tail, NodeFBT* node) {
-    NodeQueueFBT* newNode = new NodeQueueFBT{ node, nullptr };
-    if (tail) tail->next = newNode;
-    else head = newNode;
-    tail = newNode;
-}
-
-NodeFBT* popQueueFBT(NodeQueueFBT*& head, NodeQueueFBT*& tail) {
-    if (!head) return nullptr;
-    NodeFBT* node = head->node;
-    NodeQueueFBT* tmp = head;
-    head = head->next;
-    if (!head) tail = nullptr;
-    delete tmp;
-    return node;
-}
 
 NodeFBT* addNodeFBT(NodeFBT* root, std::string value) {
-    NodeFBT* newNode = new NodeFBT{ value, nullptr, nullptr };
-    if (!root) return newNode;
+    if (!root) return new NodeFBT{ value, nullptr, nullptr };
 
-    NodeQueueFBT* head = nullptr;
-    NodeQueueFBT* tail = nullptr;
-    pushQueueFBT(head, tail, root);
+    if (value < root->key)
+        root->left = addNodeFBT(root->left, value);
+    else if (value > root->key)
+        root->right = addNodeFBT(root->right, value);
 
-    while (head) {
-        NodeFBT* temp = popQueueFBT(head, tail);
-
-        if (!temp->left) {
-            temp->left = newNode;
-            return root;
-        }
-        if (!temp->right) {
-            temp->right = newNode;
-            return root;
-        }
-
-        pushQueueFBT(head, tail, temp->left);
-        pushQueueFBT(head, tail, temp->right);
-    }
     return root;
 }
 
 NodeFBT* findNodeFBT(NodeFBT* root, std::string value) {
     if (!root) return nullptr;
     if (root->key == value) return root;
-
-    NodeFBT* leftRes = findNodeFBT(root->left, value);
-    if (leftRes) return leftRes;
-
+    if (value < root->key) return findNodeFBT(root->left, value);
     return findNodeFBT(root->right, value);
 }
 
@@ -61,9 +26,47 @@ bool isFullFBT(NodeFBT* root) {
     return isFullFBT(root->left) && isFullFBT(root->right);
 }
 
-void printTreeFBT(NodeFBT* root) {
+int heightFBT(NodeFBT* root) {
+    if (!root) return 0;
+    int lh = heightFBT(root->left);
+    int rh = heightFBT(root->right);
+    return 1 + (lh > rh ? lh : rh);
+}
+
+void printLevel(NodeFBT* root, int level) {
     if (!root) return;
-    printTreeFBT(root->left);
+    if (level == 1)
+        std::cout << root->key << " ";
+    else {
+        printLevel(root->left, level - 1);
+        printLevel(root->right, level - 1);
+    }
+}
+
+void printLevelFBT(NodeFBT* root) {
+    int h = heightFBT(root);
+    for (int i = 1; i <= h; ++i) {
+        printLevel(root, i);
+    }
+}
+
+void printLeftRight(NodeFBT* root) {
+    if (!root) return;
+    printLeftRight(root->left);
     std::cout << root->key << " ";
-    printTreeFBT(root->right);
+    printLeftRight(root->right);
+}
+
+void printTopBot(NodeFBT* root) {
+    if (!root) return;
+    std::cout << root->key << " ";
+    printTopBot(root->left);
+    printTopBot(root->right);
+}
+
+void printBotTop(NodeFBT* root) {
+    if (!root) return;
+    printBotTop(root->left);
+    printBotTop(root->right);
+    std::cout << root->key << " ";
 }

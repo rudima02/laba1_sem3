@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 struct NodeFBT {
     std::string key;
@@ -7,15 +8,11 @@ struct NodeFBT {
     NodeFBT* right;
 };
 
-struct NodeQueueFBT {
-    NodeFBT* node;
-    NodeQueueFBT* next;
-};
-
-void pushQueueFBT(NodeQueueFBT*& head, NodeQueueFBT*& tail, NodeFBT* node);
-NodeFBT* popQueueFBT(NodeQueueFBT*& head, NodeQueueFBT*& tail);
-
 NodeFBT* addNodeFBT(NodeFBT* root, std::string value);
 NodeFBT* findNodeFBT(NodeFBT* root, std::string value);
 bool isFullFBT(NodeFBT* root);
-void printTreeFBT(NodeFBT* root);
+
+void printLevelFBT(NodeFBT* root);
+void printLeftRight(NodeFBT* root);      
+void printTopBot(NodeFBT* root);         
+void printBotTop(NodeFBT* root);         

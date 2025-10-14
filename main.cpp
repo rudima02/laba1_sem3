@@ -163,16 +163,28 @@ int main(int argc, char* argv[]) {
             else
                 cout << "Not found" << endl;
         }
-        else if (arg == "printFBT") {
+        /*else if (arg == "printFBT") {
             printTreeFBT(root);
-            cout << endl;
-        }
+        }*/
         else if (arg == "isFullFBT") {
             if (isFullFBT(root))
                 cout << "Tree is FULL" << endl;
             else
                 cout << "Tree is NOT full" << endl;
         }
+        else if (arg == "printLevelFBT") {
+            printLevelFBT(root);  
+        }
+        else if (arg == "printLeftRight") {
+            printLeftRight(root);
+        }
+        else if (arg == "printTopBot") {
+            printTopBot(root);
+        }
+        else if (arg == "printBotTop") {
+            printBotTop(root);
+        }
+        
 
         // Array
         if (arg == "addArray" && i + 1 < argc) {
