@@ -10,14 +10,14 @@ void printNextValueFL(NodeFL* ptr) {
     std::cout << std::endl;
 }
 
-void addHeadFL(NodeFL*& headFL, int value) {
+void addHeadFL(NodeFL*& headFL, std::string value) {
     NodeFL* newNode = new NodeFL;
     newNode->key = value;
     newNode->next = headFL;
     headFL = newNode;
 }
 
-void addTailFL(NodeFL*& headFL, int value) {
+void addTailFL(NodeFL*& headFL, std::string value) {
     NodeFL* newNode = new NodeFL;
     newNode->key = value;
     newNode->next = nullptr;
@@ -32,7 +32,7 @@ void addTailFL(NodeFL*& headFL, int value) {
     ptr->next = newNode;
 }
 
-void addAfterFL(NodeFL* ptr, int value) {
+void addAfterFL(NodeFL* ptr, std::string value) {
     if (ptr == nullptr) return;
     NodeFL* newNode = new NodeFL;
     newNode->key = value;
@@ -40,7 +40,7 @@ void addAfterFL(NodeFL* ptr, int value) {
     ptr->next = newNode;
 }
 
-void addBeforeFL(NodeFL*& headFL, NodeFL* ptr, int value) {
+void addBeforeFL(NodeFL*& headFL, NodeFL* ptr, std::string value) {
     if (ptr == nullptr) return;
     if (headFL == ptr) {
         addHeadFL(headFL, value);
@@ -98,7 +98,7 @@ void deleteBeforeFL(NodeFL*& headFL, NodeFL* ptr) {
     }
 }
 
-NodeFL* findByValueFL(NodeFL* headFL, int value) {
+NodeFL* findByValueFL(NodeFL* headFL, std::string value) {
     NodeFL* ptr = headFL;
     while (ptr != nullptr) {
         if (ptr->key == value) return ptr;
@@ -107,7 +107,7 @@ NodeFL* findByValueFL(NodeFL* headFL, int value) {
     return nullptr;
 }
 
-void deleteByValueFL(NodeFL*& headFL, int value) {
+void deleteByValueFL(NodeFL*& headFL, std::string value) {
     if (headFL == nullptr) return;
     if (headFL->key == value) {
         deleteHeadFL(headFL);

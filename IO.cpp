@@ -33,7 +33,7 @@ void loadDLLFromFile(NodeDLL*& head, const std::string& filename) {
     deleteAllDLL(head);
     head = nullptr;
 
-    int value;
+    std::string value;
     while (file >> value) addTailDLL(head, value);
 }
 
@@ -51,7 +51,7 @@ void loadFLFromFile(NodeFL*& head, const std::string& filename) {
     deleteAllFL(head);
     head = nullptr;
 
-    int value;
+    std::string value;
     while (file >> value) addTailFL(head, value);
 }
 
@@ -70,8 +70,8 @@ void loadStackFromFile(NodeStack*& top, const std::string& filename) {
     deleteStack(top);
     top = nullptr;
 
-    std::vector<int> temp;
-    int value;
+    std::vector<std::string> temp;
+    std::string value;
     while (file >> value) temp.push_back(value);
 
     for (auto it = temp.rbegin(); it != temp.rend(); ++it) pushStack(top, *it);
@@ -91,7 +91,7 @@ void loadQueueFromFile(NodeQueue*& head, NodeQueue*& tail, const std::string& fi
     deleteQueue(head, tail);
     head = tail = nullptr;
 
-    int value;
+    std::string value;
     while (file >> value) pushQueue(head, tail, value);
 }
 
@@ -116,7 +116,7 @@ void loadFBTFromFile(NodeFBT*& root, const std::string& filename) {
     std::ifstream file(filename);
     root = nullptr;
 
-    int value;
+    std::string value;
     while (file >> value) root = addNodeFBT(root, value);
 }
 

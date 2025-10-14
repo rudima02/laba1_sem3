@@ -1,7 +1,7 @@
 #include "Stack.h"
 #include <iostream>
 
-void pushStack(NodeStack*& topStack, int value) {
+void pushStack(NodeStack*& topStack, std::string value) {
     NodeStack* newNode = new NodeStack;
     newNode->key = value;
     newNode->next = topStack;

@@ -32,22 +32,22 @@ int main(int argc, char* argv[]) {
 
         // DLL
         if (arg == "addHeadDLL" && i + 1 < argc) {
-            int value = stoi(argv[++i]);
+            std::string value = (argv[++i]);
             addHeadDLL(headDLL, value);
         }
         else if (arg == "addTailDLL" && i + 1 < argc) {
-            int value = stoi(argv[++i]);
+            std::string value = (argv[++i]);
             addTailDLL(headDLL, value);
         }
         else if (arg == "addAfterDLL" && i + 2 < argc) {
-            int target = stoi(argv[++i]);
-            int value = stoi(argv[++i]);
+            std::string target = (argv[++i]);
+            std::string value = (argv[++i]);
             NodeDLL* ptr = findByValueDLL(headDLL, target);
             addAfterDLL(ptr, value);
         }
         else if (arg == "addBeforeDLL" && i + 2 < argc) {
-            int target = stoi(argv[++i]);
-            int value = stoi(argv[++i]);
+            std::string target = (argv[++i]);
+            std::string value = (argv[++i]);
             NodeDLL* ptr = findByValueDLL(headDLL, target);
             addBeforeDLL(headDLL, ptr, value);
         }
@@ -58,17 +58,17 @@ int main(int argc, char* argv[]) {
             deleteTailDLL(headDLL);
         }
         else if (arg == "deleteAfterDLL" && i + 1 < argc) {
-            int target = stoi(argv[++i]);
+            std::string target = (argv[++i]);
             NodeDLL* ptr = findByValueDLL(headDLL, target);
             deleteAfterDLL(headDLL, ptr);
         }
         else if (arg == "deleteBeforeDLL" && i + 1 < argc) {
-            int target = stoi(argv[++i]);
+            std::string target = (argv[++i]);
             NodeDLL* ptr = findByValueDLL(headDLL, target);
             deleteBeforeDLL(headDLL, ptr);
         }
         else if (arg == "deleteByValueDLL" && i + 1 < argc) {
-            int value = stoi(argv[++i]);
+            std::string value = (argv[++i]);
             deleteByValueDLL(headDLL, value);
         }
         else if (arg == "printDLL") {
@@ -80,22 +80,22 @@ int main(int argc, char* argv[]) {
 
         // FL
         else if (arg == "addHeadFL" && i + 1 < argc) {
-            int value = stoi(argv[++i]);
+            std::string value = (argv[++i]);
             addHeadFL(headFL, value);
         }
         else if (arg == "addTailFL" && i + 1 < argc) {
-            int value = stoi(argv[++i]);
+            std::string value = (argv[++i]);
             addTailFL(headFL, value);
         }
         else if (arg == "addAfterFL" && i + 2 < argc) {
-            int target = stoi(argv[++i]);
-            int value = stoi(argv[++i]);
+            std::string target = (argv[++i]);
+            std::string value = (argv[++i]);
             NodeFL* ptr = findByValueFL(headFL, target);
             addAfterFL(ptr, value);
         }
         else if (arg == "addBeforeFL" && i + 2 < argc) {
-            int target = stoi(argv[++i]);
-            int value = stoi(argv[++i]);
+            std::string target = (argv[++i]);
+            std::string value = (argv[++i]);
             NodeFL* ptr = findByValueFL(headFL, target);
             addBeforeFL(headFL, ptr, value);
         }
@@ -106,17 +106,17 @@ int main(int argc, char* argv[]) {
             deleteTailFL(headFL);
         }
         else if (arg == "deleteAfterFL" && i + 1 < argc) {
-            int target = stoi(argv[++i]);
+            std::string target = (argv[++i]);
             NodeFL* ptr = findByValueFL(headFL, target);
             deleteAfterFL(ptr);
         }
         else if (arg == "deleteBeforeFL" && i + 1 < argc) {
-            int target = stoi(argv[++i]);
+            std::string target = (argv[++i]);
             NodeFL* ptr = findByValueFL(headFL, target);
             deleteBeforeFL(headFL, ptr);
         }
         else if (arg == "deleteByValueFL" && i + 1 < argc) {
-            int value = stoi(argv[++i]);
+            std::string value = (argv[++i]);
             deleteByValueFL(headFL, value);
         }
         else if (arg == "printFL") {
@@ -128,7 +128,7 @@ int main(int argc, char* argv[]) {
 
         // Stack
         if (arg == "pushStack" && i + 1 < argc) {
-            int value = stoi(argv[++i]);
+            std::string value = (argv[++i]);
             pushStack(topStack, value);
         }
         else if (arg == "popStack") {
@@ -140,7 +140,7 @@ int main(int argc, char* argv[]) {
 
         // Queue
         else if (arg == "pushQueue" && i + 1 < argc) {
-            int value = stoi(argv[++i]);
+            std::string value = (argv[++i]);
             pushQueue(headQueue, tailQueue, value);
         }
         else if (arg == "popQueue") {
@@ -152,11 +152,11 @@ int main(int argc, char* argv[]) {
 
         // FBT
         if (arg == "addFBT" && i + 1 < argc) {
-            int value = stoi(argv[++i]);
+            std::string value = (argv[++i]);
             root = addNodeFBT(root, value);
         }
         else if (arg == "findFBT" && i + 1 < argc) {
-            int value = stoi(argv[++i]);
+            std::string value = (argv[++i]);
             NodeFBT* node = findNodeFBT(root, value);
             if (node)
                 cout << "Found: " << node->key << endl;

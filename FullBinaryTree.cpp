@@ -17,7 +17,7 @@ NodeFBT* popQueueFBT(NodeQueueFBT*& head, NodeQueueFBT*& tail) {
     return node;
 }
 
-NodeFBT* addNodeFBT(NodeFBT* root, int value) {
+NodeFBT* addNodeFBT(NodeFBT* root, std::string value) {
     NodeFBT* newNode = new NodeFBT{ value, nullptr, nullptr };
     if (!root) return newNode;
 
@@ -43,7 +43,7 @@ NodeFBT* addNodeFBT(NodeFBT* root, int value) {
     return root;
 }
 
-NodeFBT* findNodeFBT(NodeFBT* root, int value) {
+NodeFBT* findNodeFBT(NodeFBT* root, std::string value) {
     if (!root) return nullptr;
     if (root->key == value) return root;
 

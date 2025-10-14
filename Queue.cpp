@@ -1,6 +1,6 @@
 #include "Queue.h"
 
-void pushQueue(NodeQueue*& head, NodeQueue*& tail, int value) {
+void pushQueue(NodeQueue*& head, NodeQueue*& tail, std::string value) {
     NodeQueue* newNode = new NodeQueue;
     newNode->key = value;
     newNode->next = nullptr;

@@ -19,7 +19,7 @@ void printNextValueDLL(NodeDLL* ptr) {
     std::cout << std::endl;
 }
 
-void addHeadDLL(NodeDLL*& headDLL, int value) {
+void addHeadDLL(NodeDLL*& headDLL, std::string value) {
     NodeDLL* newNode = new NodeDLL;
     newNode->key = value;
     newNode->next = headDLL;
@@ -28,7 +28,7 @@ void addHeadDLL(NodeDLL*& headDLL, int value) {
     headDLL = newNode;
 }
 
-void addTailDLL(NodeDLL*& headDLL, int value) {
+void addTailDLL(NodeDLL*& headDLL, std::string value) {
     NodeDLL* newNode = new NodeDLL;
     newNode->key = value;
     newNode->next = nullptr;
@@ -43,7 +43,7 @@ void addTailDLL(NodeDLL*& headDLL, int value) {
     newNode->prev = ptr;
 }
 
-void addAfterDLL(NodeDLL* ptr, int value) {
+void addAfterDLL(NodeDLL* ptr, std::string value) {
     if (ptr == nullptr) return;
     NodeDLL* newNode = new NodeDLL;
     newNode->key = value;
@@ -53,7 +53,7 @@ void addAfterDLL(NodeDLL* ptr, int value) {
     ptr->next = newNode;
 }
 
-void addBeforeDLL(NodeDLL*& headDLL, NodeDLL* ptr, int value) {
+void addBeforeDLL(NodeDLL*& headDLL, NodeDLL* ptr, std::string value) {
     if (ptr == nullptr) return;
     NodeDLL* newNode = new NodeDLL;
     newNode->key = value;
@@ -98,7 +98,7 @@ void deleteAfterDLL(NodeDLL* headDLL, NodeDLL* ptr) {
     delete toDelete;
 }
 
-NodeDLL* findByValueDLL(NodeDLL* headDLL, int value) {
+NodeDLL* findByValueDLL(NodeDLL* headDLL, std::string value) {
     NodeDLL* ptr = headDLL;
     while (ptr != nullptr) {
         if (ptr->key == value) return ptr;
@@ -107,7 +107,7 @@ NodeDLL* findByValueDLL(NodeDLL* headDLL, int value) {
     return nullptr;
 }
 
-void deleteByValueDLL(NodeDLL*& headDLL, int value) {
+void deleteByValueDLL(NodeDLL*& headDLL, std::string value) {
     NodeDLL* ptr = findByValueDLL(headDLL, value);
     if (ptr == nullptr) return;
     if (ptr->prev == nullptr) {

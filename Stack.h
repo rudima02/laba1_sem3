@@ -1,10 +1,11 @@
 #pragma once
+#include <string>
 
 struct NodeStack {
-    int key;
+    std::string key;
     NodeStack* next;
 };
 
-void pushStack(NodeStack*& topStack, int value);
+void pushStack(NodeStack*& topStack, std::string value);
 void popStack(NodeStack*& topStack);
 void printStack(NodeStack* topStack);
