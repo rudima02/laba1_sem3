@@ -10,7 +10,7 @@ struct Array {
 
 void initArray(Array& arr);
 void addArray(Array& arr, const std::string& key);
-void addArray(Array& arr, const std::string& key, int index);
+void addIndexArray(Array& arr, const std::string& key, int index);
 std::string getArray(Array& arr, int index);
 void removeArray(Array& arr, int index);
 void changeArray(Array& arr, int index, const std::string& key);

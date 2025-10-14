@@ -22,7 +22,7 @@ void addArray(Array& arr, const std::string& key) {
     arr.size++;
 }
 
-void addArray(Array& arr, const std::string& key, int index) {
+void addIndexArray(Array& arr, const std::string& key, int index) {
     if (index < 0 || index > arr.size) return;
 
     if (arr.size + 1 > arr.memorySize) {
