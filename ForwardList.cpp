@@ -2,7 +2,6 @@
 #include "ForwardList.h" 
 
 void printNextValueFL(NodeFL* ptr) {
-    std::cout << "Value: ";
     while (ptr != nullptr) {
         std::cout << ptr->key << " ";
         ptr = ptr->next;
@@ -122,11 +121,8 @@ void deleteByValueFL(NodeFL*& headFL, std::string value) {
     }
 }
 
-void printMemoryFL(NodeFL* ptr) {
-    std::cout << "Address: ";
-    while (ptr != nullptr) {
-        std::cout << &(ptr->key) << " ";
-        ptr = ptr->next;
-    }
-    std::cout << std::endl;
+void printPrevValueFL(NodeFL* ptr) {
+    if (ptr == nullptr) return;
+    printPrevValueFL(ptr->next);
+    std::cout << ptr->key << " ";
 }

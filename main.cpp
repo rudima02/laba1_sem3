@@ -122,9 +122,10 @@ int main(int argc, char* argv[]) {
         else if (arg == "printFL") {
             printNextValueFL(headFL);
         }
-        else if (arg == "printMemoryFL") {
-            printMemoryFL(headFL);
+        else if (arg == "printReverseFL"){
+            printPrevValueFL(headFL);
         }
+
 
         // Stack
         if (arg == "pushStack" && i + 1 < argc) {

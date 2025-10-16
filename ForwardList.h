@@ -21,4 +21,4 @@ void deleteByValueFL(NodeFL*& headFL, std::string value);
 NodeFL* findByValueFL(NodeFL* headFL, std::string value);
 
 void printNextValueFL(NodeFL* headFL);
-void printMemoryFL(NodeFL* headFL);
+void printPrevValueFL(NodeFL* ptr);

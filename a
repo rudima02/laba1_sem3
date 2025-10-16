@@ -1,0 +1,29 @@
+[33mcommit 02930599aaed2458def0e348186bce30522bd333[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Dmitriy <rudima02@gmail.com>
+Date:   Wed Oct 15 04:57:47 2025 +0700
+
+    add new ways to print FBT
+
+[33mcommit 11dfe601636a3e754bdbbc0ac105936535c04df9[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Dmitriy <rudima02@gmail.com>
+Date:   Wed Oct 15 02:17:24 2025 +0700
+
+    to string
+
+[33mcommit 07027d049e1498abd7bc09da07a827161138f7f0[m
+Author: Dmitriy <rudima02@gmail.com>
+Date:   Wed Oct 15 01:28:31 2025 +0700
+
+     rdy
+
+[33mcommit 4225f897a9f7ad111d60b58c3b4779ec4e976573[m
+Author: rudima02оё Имя <rudima02@gmail.com>
+Date:   Mon Oct 13 20:51:58 2025 +0700
+
+    Добавьте файлы проекта.
+
+[33mcommit 73a05ed780818407a86201de1ac0ab90c1df2840[m
+Author: rudima02оё Имя <rudima02@gmail.com>
+Date:   Mon Oct 13 20:51:57 2025 +0700
+
+    Добавить .gitattributes и .gitignore.
