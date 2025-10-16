@@ -114,11 +114,33 @@ void saveFBTToFile(NodeFBT* root, const std::string& filename) {
 
 void loadFBTFromFile(NodeFBT*& root, const std::string& filename) {
     std::ifstream file(filename);
-    root = nullptr;
+    if (!file) return;
 
-    std::string value;
-    while (file >> value) root = addNodeFBT(root, value);
+    std::vector<std::string> values;
+    std::string val;
+    while (file >> val) values.push_back(val);
+    if (values.empty()) return;
+
+    root = new NodeFBT{values[0], nullptr, nullptr};
+    std::queue<NodeFBT*> q;
+    q.push(root);
+
+    int i = 1;
+    while (i < values.size()) {
+        NodeFBT* curr = q.front();
+        q.pop();
+
+        if (i < values.size()) {
+            curr->left = new NodeFBT{values[i++], nullptr, nullptr};
+            q.push(curr->left);
+        }
+        if (i < values.size()) {
+            curr->right = new NodeFBT{values[i++], nullptr, nullptr};
+            q.push(curr->right);
+        }
+    }
 }
+
 
 void saveArrayToFile(const Array& arr, const std::string& filename) {
     std::ofstream file(filename);

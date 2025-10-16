@@ -155,6 +155,7 @@ int main(int argc, char* argv[]) {
         if (arg == "addFBT" && i + 1 < argc) {
             std::string value = (argv[++i]);
             root = addNodeFBT(root, value);
+            
         }
         else if (arg == "findFBT" && i + 1 < argc) {
             std::string value = (argv[++i]);

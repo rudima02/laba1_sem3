@@ -13,6 +13,7 @@ void popStack(NodeStack*& topStack) {
     NodeStack* temp = topStack;
     topStack = topStack->next;
     delete temp;
+    //вернуть элемент
 }
 
 void printStack(NodeStack* topStack) {

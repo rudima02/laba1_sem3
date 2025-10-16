@@ -9,6 +9,12 @@ void printNextValueFL(NodeFL* ptr) {
     std::cout << std::endl;
 }
 
+void printPrevValueFL(NodeFL* ptr) {
+    if (ptr == nullptr) return;
+    printPrevValueFL(ptr->next);
+    std::cout << ptr->key << " ";
+}
+
 void addHeadFL(NodeFL*& headFL, std::string value) {
     NodeFL* newNode = new NodeFL;
     newNode->key = value;
@@ -121,8 +127,3 @@ void deleteByValueFL(NodeFL*& headFL, std::string value) {
     }
 }
 
-void printPrevValueFL(NodeFL* ptr) {
-    if (ptr == nullptr) return;
-    printPrevValueFL(ptr->next);
-    std::cout << ptr->key << " ";
-}

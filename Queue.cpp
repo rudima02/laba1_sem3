@@ -19,6 +19,7 @@ void popQueue(NodeQueue*& head, NodeQueue*& tail) {
     head = head->next;
     if (head == nullptr) tail = nullptr;
     delete toDelete;
+    //вернуть элемент
 }
 
 void printQueue(NodeQueue* head) {
