@@ -192,7 +192,7 @@ int main(int argc, char* argv[]) {
             string value = argv[++i];
             addArray(arr, value);
         }
-        else if (arg == "addArrayIndex" && i + 2 < argc) {
+        else if (arg == "addIndexArray" && i + 2 < argc) {
             int index = stoi(argv[++i]);
             string value = argv[++i];
             addIndexArray(arr, value, index);
