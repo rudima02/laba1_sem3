@@ -24,7 +24,6 @@ std::string popQueue(NodeQueue*& head, NodeQueue*& tail) {
 }
 
 void printQueue(NodeQueue* head) {
-    std::cout << "Queue: ";
     while (head != nullptr) {
         std::cout << head->key << " ";
         head = head->next;

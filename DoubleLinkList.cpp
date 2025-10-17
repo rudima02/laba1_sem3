@@ -2,7 +2,6 @@
 #include "DoubleLinkList.h"
 
 void printPrevValueDLL(NodeDLL* ptr) {
-    std::cout << "Value :";
     while (ptr != nullptr) {
         std::cout << ptr->key << " ";
         ptr = ptr->prev;
@@ -11,7 +10,6 @@ void printPrevValueDLL(NodeDLL* ptr) {
 }
 
 void printNextValueDLL(NodeDLL* ptr) {
-    std::cout << "Value: ";
     while (ptr != nullptr) {
         std::cout << ptr->key << " ";
         ptr = ptr->next;

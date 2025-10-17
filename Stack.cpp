@@ -18,7 +18,6 @@ std::string popStack(NodeStack*& topStack) {
 }
 
 void printStack(NodeStack* topStack) {
-    std::cout << "Stack: ";
     while (topStack != nullptr) {
         std::cout << topStack->key << " ";
         topStack = topStack->next;
