@@ -8,12 +8,13 @@ void pushStack(NodeStack*& topStack, std::string value) {
     topStack = newNode;
 }
 
-void popStack(NodeStack*& topStack) {
-    if (topStack == nullptr) return;
+std::string popStack(NodeStack*& topStack) {
+    if (topStack == nullptr) return "";
     NodeStack* temp = topStack;
     topStack = topStack->next;
+    std::string value = topStack->key;
     delete temp;
-    //вернуть элемент
+    return value;
 }
 
 void printStack(NodeStack* topStack) {

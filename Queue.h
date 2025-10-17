@@ -8,5 +8,5 @@ struct NodeQueue {
 };
 
 void pushQueue(NodeQueue*& head, NodeQueue*& tail, std::string value);
-void popQueue(NodeQueue*& head, NodeQueue*& tail);
+std::string popQueue(NodeQueue*& head, NodeQueue*& tail);
 void printQueue(NodeQueue* head);

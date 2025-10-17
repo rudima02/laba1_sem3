@@ -7,5 +7,5 @@ struct NodeStack {
 };
 
 void pushStack(NodeStack*& topStack, std::string value);
-void popStack(NodeStack*& topStack);
+std::string popStack(NodeStack*& topStack);
 void printStack(NodeStack* topStack);

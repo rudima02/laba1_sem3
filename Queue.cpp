@@ -13,13 +13,14 @@ void pushQueue(NodeQueue*& head, NodeQueue*& tail, std::string value) {
     tail = newNode;
 }
 
-void popQueue(NodeQueue*& head, NodeQueue*& tail) {
-    if (head == nullptr) return;
+std::string popQueue(NodeQueue*& head, NodeQueue*& tail) {
+    if (head == nullptr) return "";
     NodeQueue* toDelete = head;
+    std::string value = toDelete->key;
     head = head->next;
     if (head == nullptr) tail = nullptr;
     delete toDelete;
-    //вернуть элемент
+    return value;
 }
 
 void printQueue(NodeQueue* head) {
